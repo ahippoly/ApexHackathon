@@ -24,17 +24,17 @@ export const defaultIssuers: IIssuer[] = [
 export const defaultHolders: IHolder[] = [
   {
     name: 'Yue Wang',
-    address: 'r9LqNeG6qHxjeUocjvVki2XR35weJ9mZgQ',
+    address: 'rBcfGpKaYEQsRjY6NsCHDCPT5PfvNki4Pz',
     img: jadeMeer,
   },
   {
     name: 'Bob',
-    address: 'r9LqNeG6qHxjeUocjvVki2XR35weJ9mZgQ',
+    address: 'rBcfGpKaYEQsRjY6NsCHDCPT5PfvNki4Pz',
     img: jadeMeer,
   },
   {
     name: 'Charlie',
-    address: 'r9LqNeG6qHxjeUocjvVki2XR35weJ9mZgQ',
+    address: 'rBcfGpKaYEQsRjY6NsCHDCPT5PfvNki4Pz',
     img: jadeMeer,
   },
 ];

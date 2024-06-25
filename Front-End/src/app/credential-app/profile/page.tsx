@@ -42,9 +42,9 @@ function ProfilePage() {
               height: 150,
             }}
           >
-            <Image src={jadeMeer} alt='Jade Meer' />
+            <Image src={jadeMeer} alt='Yue Wang' />
           </Avatar>
-          <Typography variant='h5'>Jade meer</Typography>
+          <Typography variant='h5'>Yue Wang</Typography>
           <Chip label={`did:xrp:1:${webAuth.userWallet?.address}`} />
         </Paper>
       )}
