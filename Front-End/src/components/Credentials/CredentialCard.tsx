@@ -8,45 +8,51 @@ import {
   Typography,
 } from '@mui/material';
 import Image from 'next/image';
+import Link from 'next/link';
 function CredentialCard({ credential }: { credential: ICredential }) {
   return (
-    <Card
-      sx={{
-        display: 'flex',
-        p: 2,
-        gap: 2,
-      }}
-    >
-      <Image
-        src={credential.img}
-        alt={credential.name}
-        width={100}
-        height={100}
-      />
-      <Stack
+    <Link href={`/credential-app/credentials/${credential.id}`} passHref>
+      <Card
         sx={{
-          flexGrow: 1,
+          display: 'flex',
+          p: 2,
+          gap: 2,
+          cursor: 'pointer',
         }}
       >
-        <Typography>{credential.name}</Typography>
-        <Typography color='text.secondary'>{credential.issuer}</Typography>
-        <CardActions
+        <Image
+          src={credential.img}
+          alt={credential.name}
+          width={100}
+          height={100}
+        />
+        <Stack
           sx={{
-            display: 'flex',
-            gap: 0,
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
+            flexGrow: 1,
           }}
         >
-          <IconButton>
-            <DeleteIcon />
-          </IconButton>
-          <IconButton>
-            <ShareIcon />
-          </IconButton>
-        </CardActions>
-      </Stack>
-    </Card>
+          <Typography>{credential.name}</Typography>
+          <Typography color='text.secondary'>
+            {credential.issuer.name}
+          </Typography>
+          <CardActions
+            sx={{
+              display: 'flex',
+              gap: 0,
+              flexDirection: 'row',
+              justifyContent: 'flex-end',
+            }}
+          >
+            <IconButton>
+              <DeleteIcon />
+            </IconButton>
+            <IconButton>
+              <ShareIcon />
+            </IconButton>
+          </CardActions>
+        </Stack>
+      </Card>
+    </Link>
   );
 }
 

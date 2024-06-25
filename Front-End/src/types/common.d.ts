@@ -7,11 +7,30 @@ declare global {
     address: string;
   }
 
+  interface IIssuer {
+    name: string;
+    address: string;
+    img: string | StaticImageData;
+  }
+
+  interface IHolder {
+    name: string;
+    address: string;
+    img: string | StaticImageData;
+  }
+
   interface ICredential {
     id: string;
-    issuer: string;
+    issuer: IIssuer;
     name: string;
     img: string | StaticImageData;
+    issueDate: Date;
+    description: string;
+    status: string;
+    type: string;
+    blockchain: string;
+    destinator: IHolder;
+    metadata?: string;
   }
 
   interface IOpportunity {

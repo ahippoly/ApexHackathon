@@ -16,7 +16,7 @@ function MainContainer({
       elevation={8}
       sx={{
         p: 0,
-        height: isMobile ? '100%' : '680px',
+        height: isMobile ? '100%' : '780px',
         width: isMobile ? '100%' : '400px',
         display: 'flex',
         flexDirection: 'column',
@@ -26,7 +26,7 @@ function MainContainer({
     >
       <TopBar />
       <Divider />
-      <Stack flexGrow={1} p={4} pb={0}>
+      <Stack flexGrow={1} p={4} height='1px'>
         {children}
       </Stack>
       <Divider />
