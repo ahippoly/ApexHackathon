@@ -1,9 +1,14 @@
+'use client';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
 import { Card, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 
+import { useWeb3Auth } from '@/hooks/useWeb3Auth';
 import { shrinkString } from '@/lib/utils';
 
 function CredentialDetail({ credential }: { credential: ICredential }) {
+  const webAuth = useWeb3Auth();
+
   return (
     <Card
       sx={{
@@ -40,7 +45,11 @@ function CredentialDetail({ credential }: { credential: ICredential }) {
         <Typography variant='body1' fontWeight='bold'>
           Issuer
         </Typography>
-        <Typography>{credential.issuer.name}</Typography>
+        <Stack direction='row' gap={1} alignItems='center'>
+          <Typography>{credential.issuer.name}</Typography>
+          <DoneAllIcon />
+        </Stack>
+
         <Typography>
           DID:{credential.blockchain}:
           {shrinkString(credential.issuer.address, 3, 3)}
@@ -65,9 +74,10 @@ function CredentialDetail({ credential }: { credential: ICredential }) {
       <Stack>
         <Typography fontWeight='bold'>Destinator</Typography>
         <Typography>{credential.destinator.name}</Typography>
-        <Typography>
-          DID:{credential.blockchain}:
-          {shrinkString(credential.destinator.address, 3, 3)}
+        <Typography noWrap>
+          {`did:xrp:1:${webAuth.userWallet?.address}` ||
+            `DID:${credential.blockchain}:
+          ${shrinkString(credential.destinator.address, 3, 3)}`}
         </Typography>
       </Stack>
     </Card>
