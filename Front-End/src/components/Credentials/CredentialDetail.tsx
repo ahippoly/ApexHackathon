@@ -15,6 +15,7 @@ function CredentialDetail({ credential }: { credential: ICredential }) {
         overflowY: 'auto',
         height: '100%',
         maxHeight: '100%',
+        scrollbarWidth: 'thin',
       }}
     >
       <Stack justifyContent='center' alignItems='center' alignSelf='center'>
